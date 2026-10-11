@@ -7,6 +7,7 @@ import Fireworks from "./Fireworks.js";
 import Together from "./Together.js";
 import Deepseek from "./Deepseek.js";
 import OpenRouter from "./OpenRouter.js";
+import Opper from "./Opper.js";
 import xAI from "./xAI.js";
 import Mistral from "./Mistral.js";
 import Mimo from "./Mimo.js";
@@ -280,6 +281,11 @@ createOpenAISubclassTests(Deepseek, {
 createOpenAISubclassTests(OpenRouter, {
   providerName: "openrouter",
   defaultApiBase: "https://openrouter.ai/api/v1/",
+});
+
+createOpenAISubclassTests(Opper, {
+  providerName: "opper",
+  defaultApiBase: "https://api.opper.ai/v3/compat/",
 });
 
 createOpenAISubclassTests(xAI, {

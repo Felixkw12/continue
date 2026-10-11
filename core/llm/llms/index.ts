@@ -50,6 +50,7 @@ import Nvidia from "./Nvidia";
 import Ollama from "./Ollama";
 import OpenAI from "./OpenAI";
 import OpenRouter from "./OpenRouter";
+import Opper from "./Opper";
 import ClawRouter from "./ClawRouter";
 import OVHcloud from "./OVHcloud";
 import { Relace } from "./Relace";
@@ -125,6 +126,7 @@ export const LLMClasses = [
   xAI,
   SiliconFlow,
   Tensorix,
+  Opper,
   Scaleway,
   Relace,
   Inception,

@@ -1,0 +1,114 @@
+---
+title: "Opper"
+description: "Configure Opper with Continue to reach 700+ models from 50+ providers through one EU-hosted, OpenAI-compatible gateway"
+---
+
+[Opper](https://opper.ai) is an EU-hosted AI gateway: 700+ models from 50+ providers behind one OpenAI-compatible API and one key. Model ids are pool names such as `claude-sonnet-4-6`, and Opper picks the route for each request. To pin one provider or region, use a `provider/model` id such as `anthropic/claude-sonnet-4-6`.
+
+<Info>
+  You can get an API key from
+  [platform.opper.ai](https://platform.opper.ai).
+</Info>
+
+## Chat Model
+
+We recommend configuring **claude-sonnet-4-6** as your chat model.
+
+<Tabs>
+    <Tab title="YAML">
+    ```yaml title="config.yaml"
+    name: My Config
+    version: 0.0.1
+    schema: v1
+
+    models:
+      - name: Claude Sonnet 4.6
+        provider: opper
+        model: claude-sonnet-4-6
+        apiKey: <YOUR_OPPER_API_KEY>
+        roles:
+          - chat
+    ```
+    </Tab>
+    <Tab title="JSON">
+    ```json title="config.json"
+    {
+      "models": [
+        {
+          "title": "Claude Sonnet 4.6",
+          "provider": "opper",
+          "model": "claude-sonnet-4-6",
+          "apiKey": "<YOUR_OPPER_API_KEY>"
+        }
+      ]
+    }
+    ```
+    </Tab>
+</Tabs>
+
+## Autocomplete Model
+
+<Tabs>
+    <Tab title="YAML">
+    ```yaml title="config.yaml"
+    name: My Config
+    version: 0.0.1
+    schema: v1
+
+    models:
+      - name: Codestral
+        provider: opper
+        model: codestral-2508
+        apiKey: <YOUR_OPPER_API_KEY>
+        roles:
+          - autocomplete
+    ```
+    </Tab>
+    <Tab title="JSON">
+    ```json title="config.json"
+    {
+      "tabAutocompleteModel": {
+        "title": "Codestral",
+        "provider": "opper",
+        "model": "codestral-2508",
+        "apiKey": "<YOUR_OPPER_API_KEY>"
+      }
+    }
+    ```
+    </Tab>
+</Tabs>
+
+## Embeddings Model
+
+<Tabs>
+    <Tab title="YAML">
+    ```yaml title="config.yaml"
+    name: My Config
+    version: 0.0.1
+    schema: v1
+
+    models:
+      - name: Text Embedding 3 Small
+        provider: opper
+        model: text-embedding-3-small
+        apiKey: <YOUR_OPPER_API_KEY>
+        roles:
+          - embed
+    ```
+    </Tab>
+    <Tab title="JSON">
+    ```json title="config.json"
+    {
+      "embeddingsProvider": {
+        "provider": "opper",
+        "model": "text-embedding-3-small",
+        "apiKey": "<YOUR_OPPER_API_KEY>"
+      }
+    }
+    ```
+    </Tab>
+</Tabs>
+
+[Click here](https://opper.ai/models) to see the full model catalogue.
+
+[View the source](https://github.com/continuedev/continue/blob/main/core/llm/llms/Opper.ts)

@@ -1270,6 +1270,26 @@ To get started, [register](https://dataplatform.cloud.ibm.com/registration/stepo
     packages: [{ ...models.AUTODETECT }],
     apiKeyUrl: "https://app.tensorix.ai",
   },
+  opper: {
+    title: "Opper",
+    provider: "opper",
+    description:
+      "Opper is an EU-hosted AI gateway with 700+ models from 50+ providers behind one OpenAI-compatible API.",
+    longDescription:
+      "To get started with Opper, create an API key at [platform.opper.ai](https://platform.opper.ai).",
+    tags: [ModelProviderTags.RequiresApiKey],
+    collectInputFor: [
+      {
+        inputType: "text",
+        key: "apiKey",
+        label: "API Key",
+        placeholder: "Enter your Opper API key",
+        required: true,
+      },
+    ],
+    packages: [{ ...models.AUTODETECT }],
+    apiKeyUrl: "https://platform.opper.ai",
+  },
   venice: {
     title: "Venice",
     provider: "venice",
